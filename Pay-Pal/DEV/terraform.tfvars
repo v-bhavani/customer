@@ -1,0 +1,70 @@
+project_id           = "sapspecific"
+region               = "us-central1"
+network_name         = "default"
+subnet_name          = "default"
+service_account_email = "forsymphony@sapspecific.iam.gserviceaccount.com"
+snapshot_name        = "pay-pal-golden-snap-v1"
+tags = ["web", "production"]
+vms = [
+  {
+    name         = "dev-s4hana-dahpaydb"
+    machine_type = "e2-standard-8"
+    zone         = "us-central1-a"
+    disks = [
+      {
+        name    = "dev-s4hana-dahpaydb-backup"
+        size_gb = 100
+        type    = "pd-standard"
+      },
+      {
+        name    = "dev-s4hana-dahpaydb-shared"
+        size_gb = 64
+        type    = "pd-standard"
+      },
+      {
+        name    = "dev-s4hana-dahpaydb-data"
+        size_gb = 64
+        type    = "pd-standard"
+      },
+      {
+        name    = "dev-s4hana-dahpaydb-log"
+        size_gb = 50
+        type    = "pd-standard"
+      }
+    ]
+  },
+    {
+    name         = "dev-dahpay01db"
+    machine_type = "e2-standard-8"
+    zone         = "us-east1-c"
+    disks = []
+  },
+      {
+    name         = "dev-dahpay02db"
+    machine_type = "e2-standard-8"
+    zone         = "us-east1-c"
+    disks = []
+  },
+    {
+    name         = "dev-s4hana-dahpaypapp"
+    machine_type = "e2-standard-8"
+    zone         = "us-central1-a"
+    disks = [
+      {
+        name    = "dev-s4hana-dahpaypapp-usrsap"
+        size_gb = 20
+        type    = "pd-standard"
+      },
+       {
+        name    = "dev-s4hana-dahpaypapp-sapmnt"
+        size_gb = 15
+        type    = "pd-standard"
+      },
+      {
+        name    = "dev-s4hana-dahpaypapp-softdump"
+        size_gb = 64
+        type    = "pd-standard"
+      }
+    ]
+  }
+]
