@@ -1,7 +1,7 @@
 project_id           = "sapspecific"
 region               = "us-central1"
-network_name         = "default"
-subnet_name          = "default"
+network_name         = "pay-pal"
+subnet_name          = "pay-subnet"
 service_account_email = "forsymphony@sapspecific.iam.gserviceaccount.com"
 snapshot_name        = "pay-pal-golden-snap-v1"
 tags = ["web", "production"]
@@ -10,6 +10,7 @@ vms = [
     name         = "qa-s4hana-dahpaydb"
     machine_type = "e2-standard-8"
     zone         = "us-central1-a"
+    private_ip   = "10.0.0.18"
     disks = [
       {
         name    = "qa-s4hana-dahpaydb-backup"
@@ -33,29 +34,32 @@ vms = [
       }
     ]
   },
-    {
+  {
     name         = "qa-dahpay01db"
     machine_type = "e2-standard-8"
-    zone         = "us-east1-c"
+    zone         = "us-central1-a"
+    private_ip   = "10.0.0.19"
     disks = []
   },
-      {
+  {
     name         = "qa-dahpay02db"
     machine_type = "e2-standard-8"
-    zone         = "us-east1-c"
+    zone         = "us-central1-a"
+    private_ip   = "10.0.0.20"
     disks = []
   },
-    {
+  {
     name         = "qa-s4hana-dahpaypapp"
     machine_type = "e2-standard-8"
     zone         = "us-central1-a"
+    private_ip   = "10.0.0.21"
     disks = [
       {
         name    = "qa-s4hana-dahpaypapp-usrsap"
         size_gb = 20
         type    = "pd-standard"
       },
-       {
+      {
         name    = "qa-s4hana-dahpaypapp-sapmnt"
         size_gb = 15
         type    = "pd-standard"
@@ -68,3 +72,4 @@ vms = [
     ]
   }
 ]
+
