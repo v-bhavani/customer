@@ -8,7 +8,7 @@
 # terraform {
 #   backend "gcs" {
 #     bucket = "bcs_terraform_bucket"  # Replace with your bucket name
-#     prefix = "paypal/dev"
+#     prefix = "paypal/qa"
 #    #impersonate_service_account = "symphony-gcp@innovation-cs-11560.iam.gserviceaccount.com"
 #   }
 # }
