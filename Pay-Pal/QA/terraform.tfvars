@@ -1,4 +1,4 @@
-project_id           = "sapspecific"
+project_id           = "sapspecific" #qa
 region               = "us-central1"
 network_name         = "pay-pal"
 subnet_name          = "pay-subnet"
