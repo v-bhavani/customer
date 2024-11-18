@@ -7,7 +7,7 @@ snapshot_name        = "pay-pal-golden-snap-v1"
 tags = ["web", "production"]
 vms = [
   {
-    name         = "dev-s4hana-dahpaydb"
+    name         = "dahpaydb"
     machine_type = "e2-standard-8"
     zone         = "us-central1-a"
     private_ip   = "10.0.0.13"
@@ -35,21 +35,21 @@ vms = [
     ]
   },
   {
-    name         = "dev-dahpay01db"
+    name         = "dahpay01db"
     machine_type = "e2-standard-8"
     zone         = "us-central1-a"
     private_ip   = "10.0.0.14"
     disks = []
   },
   {
-    name         = "dev-dahpay02db"
+    name         = "dahpay02db"
     machine_type = "e2-standard-8"
     zone         = "us-central1-a"
     private_ip   = "10.0.0.15"
     disks = []
   },
   {
-    name         = "dev-s4hana-dahpaypapp"
+    name         = "dahpaypapp"
     machine_type = "e2-standard-8"
     zone         = "us-central1-a"
     private_ip   = "10.0.0.16"
