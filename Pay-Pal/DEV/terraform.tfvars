@@ -3,7 +3,7 @@ region               = "us-central1"
 network_name         = "pay-pal"
 subnet_name          = "pay-subnet"
 service_account_email = "forsymphony@sapspecific.iam.gserviceaccount.com"
-snapshot_name        = "pay-pal-golden-snap-v3"
+snapshot_name        = "pay-pal-golden-snap-v2"
 tags = ["web", "production"]
 vms = [
   {
