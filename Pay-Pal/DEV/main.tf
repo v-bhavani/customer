@@ -1,17 +1,17 @@
-# provider "google" {
-#   project = var.project_id
-#   region  = var.region
-#   impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
-# }
+provider "google" {
+  project = var.project_id
+  region  = var.region
+  impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+}
 
-# # Configure the backend
-# terraform {
-#   backend "gcs" {
-#     bucket = "bcs_terraform_bucket"  # Replace with your bucket name
-#     prefix = "paypal/dev"
-#    impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
-#   }
-# }
+# Configure the backend
+terraform {
+  backend "gcs" {
+    bucket = "bcs_terraform_bucket"  # Replace with your bucket name
+    prefix = "paypal/test"
+   #impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+  }
+}
 
 # module "snapshot" {
 #   source        = "./modules/snapshot"
@@ -31,19 +31,19 @@
 # }
 
 
-provider "google" {
-  project = var.project_id
-  region  = var.region
-  impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
-}
+# provider "google" {
+#   project = var.project_id
+#   region  = var.region
+#   impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+# }
 
-terraform {
-  backend "gcs" {
-    bucket = "bcs_terraform_bucket"
-    prefix = "paypal/test"
-   impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
-  }
-}
+# terraform {
+#   backend "gcs" {
+#     bucket = "bcs_terraform_bucket"
+#     prefix = "paypal/test"
+#    impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+#   }
+# }
 
 module "snapshot" {
   source        = "./modules/snapshot"
