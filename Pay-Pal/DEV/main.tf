@@ -40,7 +40,7 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket = "bcs_terraform_bucket"
-    prefix = "paypal/dev"
+    prefix = "paypal/test"
    impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
   }
 }
