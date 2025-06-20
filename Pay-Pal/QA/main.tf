@@ -2,14 +2,14 @@
 provider "google" {
   project = var.project_id
   region  = var.region
-  impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+ # impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
 }
 
 terraform {
   backend "gcs" {
     bucket = "bcs_terraform_bucket"
     prefix = "paypal/qa"
-    impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+  #  impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
   }
 }
 
