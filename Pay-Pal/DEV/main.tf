@@ -1,7 +1,7 @@
 provider "google" {
   project = var.project_id
   region  = var.region
-  impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
+  #impersonate_service_account = "test-auth-symphony@sapspecific.iam.gserviceaccount.com"
 }
 
 # Configure the backend
