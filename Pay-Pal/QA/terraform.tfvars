@@ -66,7 +66,7 @@ vms = [
       },
       {
         name    = "qa-s4hana-dahpaypapp-softdump"
-        size_gb = 64
+        size_gb = 128
         type    = "pd-standard"
       }
     ]
